@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance System</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            margin: 0;
+        }
+
+        .container {
+            width: 60%;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Student Attendance System</h2>
+
+    <!-- Add Student -->
+    <h3>Add Student</h3>
+    <form action="add_student.php" method="POST">
+        <input type="number" name="id" placeholder="Student ID" required>
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="text" name="dept" placeholder="Department" required>
+        <input type="number" name="sem" placeholder="Semester" required>
+        <button type="submit">Add Student</button>
+    </form>
+
+    <!-- Mark Attendance -->
+    <h3>Mark Attendance</h3>
+    <form action="add_attendance.php" method="POST">
+
+        <input type="number" name="sid" placeholder="Student ID" required>
+
+        <!-- COURSE DROPDOWN -->
+        <select name="cid" required>
+            <option value="">Select Course</option>
+            <option value="101">DBMS</option>
+            <option value="102">Operating Systems</option>
+            <option value="103">Graph Theory</option>
+            <option value="104">Theory of Computation</option>
+        </select>
+
+        <input type="date" name="date" required>
+
+        <select name="status">
+            <option>Present</option>
+            <option>Absent</option>
+        </select>
+
+        <button type="submit">Mark Attendance</button>
+    </form>
+
+    <a href="view_attendance.php">View Attendance Records</a>
+
+</div>
+
+</body>
+</html>
